@@ -1,9 +1,14 @@
+int wordsPosY = 800;
+int wordsPosX = 400;
 void setup()
 {
   size(800,950);
+  frameRate(5);
 }
 void draw()
 {
+  wordsPosY = wordsPosY + 10;
+  wordsPosX = wordsPosX +5;
   blacksquares();
   whitesquares();
   words();
@@ -79,7 +84,8 @@ void whitesquares()
 
 void words()
 {fill (130);
+	textSize(30);
 	textAlign (CENTER);
-	text ("Shall we play a game?",400,800);
+	text ("Shall we play a game?",wordsPosX,wordsPosY);
 }
 
