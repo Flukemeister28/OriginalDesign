@@ -6,7 +6,7 @@ void draw()
 {
   blacksquares();
   whitesquares();
-  text();
+  words();
 }
 void blacksquares()
 {fill (0);
@@ -77,7 +77,7 @@ void whitesquares()
 	rect (600,650,100,100);
 }
 
-void text()
+void words()
 {fill (130);
 	textAlign (CENTER);
 	text ("Shall we play a game?",400,800);
