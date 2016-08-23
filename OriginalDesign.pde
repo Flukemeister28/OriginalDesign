@@ -1,17 +1,30 @@
-int wordsPosY = 800;
+int wordsPosY = 875;
 int wordsPosX = 400;
+int words2PosY = 50;
+int words2PosX = 400;
 void setup()
 {
   size(800,950);
-  frameRate(5);
+  frameRate(60);
+  background(0);
 }
 void draw()
 {
-  wordsPosY = wordsPosY + 10;
-  wordsPosX = wordsPosX +5;
+  wordsPosY = wordsPosY - 1;
+  wordsPosX = wordsPosX + 0;
+  words2PosY = words2PosY + 1;
+  words2PosX = words2PosX + 0;
   blacksquares();
   whitesquares();
+  topAndBottom();
   words();
+  words2();
+  if (wordsPosY < 50)
+  	{ wordsPosY = 875;
+  	}
+  if (words2PosY > 875)
+  	{ words2PosY = 50;
+  	}
 }
 void blacksquares()
 {fill (0);
@@ -46,6 +59,10 @@ void blacksquares()
 	rect (300,650,100,100);
 	rect (500,650,100,100);
 	rect (700,650,100,100);
+	rect (0,750,100,100);
+	rect (200,750,100,100);
+	rect (400,750,100,100);
+	rect (600,750,100,100);
 }
 void whitesquares()
 {fill (255);
@@ -80,12 +97,32 @@ void whitesquares()
 	rect (200,650,100,100);
 	rect (400,650,100,100);
 	rect (600,650,100,100);
+	rect (100,750,100,100);
+	rect (300,750,100,100);
+	rect (500,750,100,100);
+	rect (700,750,100,100);
 }
 
 void words()
-{fill (130);
+{
+	fill(255,0,20);
 	textSize(30);
 	textAlign (CENTER);
 	text ("Shall we play a game?",wordsPosX,wordsPosY);
+}
+
+void topAndBottom()
+{
+	fill(255,255,255);
+	rect (0,25,800,30);
+	rect (0,850,800,30);
+}
+
+void words2()
+{
+	fill(255,0,0);
+	textSize(30);
+	textAlign (CENTER);
+	text ("Shall we play a game?",words2PosX,words2PosY);
 }
 
