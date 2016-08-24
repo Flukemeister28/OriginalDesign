@@ -1,7 +1,7 @@
 int wordsPosY = 875;
-int wordsPosX = 400;
+int wordsPosX = 455;
 int words2PosY = 50;
-int words2PosX = 400;
+int words2PosX = 455;
 void setup()
 {
   size(910,910);
@@ -17,6 +17,7 @@ void draw()
   blacksquares();
   whitesquares();
   topAndBottom();
+  leftAndRight();
   words();
   words2();
   if (wordsPosY < 50)
@@ -62,7 +63,7 @@ void blacksquares()
 	rect (655,750,100,100);
 }
 void whitesquares()
-{fill (255);
+{fill (240,230,140);
 	rect (55,50,100,100);
 	rect (255,50,100,100);
 	rect (455,50,100,100);
@@ -108,8 +109,16 @@ void words()
 void topAndBottom()
 {
 	fill(255,255,255);
-	rect (0,25,910,30);
-	rect (0,850,910,30);
+	rect (27,25,856,30);
+	rect (27,850,856,30);
+}
+
+void leftAndRight()
+{
+	fill(255);
+	noStroke();
+	rect(27,49,28,801);
+	rect(855,49,28,801);
 }
 
 void words2()
