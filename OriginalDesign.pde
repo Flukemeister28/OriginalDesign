@@ -4,7 +4,7 @@ int words2PosY = 50;
 int words2PosX = 455;
 void setup()
 {
-  size(910,910);
+  size(910,930);
   frameRate(60);
   background(0);
 }
@@ -15,7 +15,7 @@ void draw()
   words2PosY = words2PosY + 1;
   words2PosX = words2PosX + 0;
   blacksquares();
-  whitesquares();
+  creamsquares();
   topAndBottom();
   leftAndRight();
   words();
@@ -26,6 +26,7 @@ void draw()
   if (words2PosY > 875)
   	{ words2PosY = 50;
   	}
+  	boundaryLines();
 }
 void blacksquares()
 {fill (0);
@@ -62,7 +63,7 @@ void blacksquares()
 	rect (455,750,100,100);
 	rect (655,750,100,100);
 }
-void whitesquares()
+void creamsquares()
 {fill (240,230,140);
 	rect (55,50,100,100);
 	rect (255,50,100,100);
@@ -108,7 +109,7 @@ void words()
 
 void topAndBottom()
 {
-	fill(255,255,255);
+	fill(255);
 	rect (27,25,856,30);
 	rect (27,850,856,30);
 }
@@ -117,8 +118,8 @@ void leftAndRight()
 {
 	fill(255);
 	noStroke();
-	rect(27,49,28,801);
-	rect(855,49,28,801);
+	rect(27,55,28,796);
+	rect(855,55,28,796);
 }
 
 void words2()
@@ -128,4 +129,12 @@ void words2()
 	textAlign (CENTER);
 	text ("Shall we play a game?",words2PosX,words2PosY);
 }
-
+void boundaryLines()
+{
+	stroke(0);
+	line(55,55,855,55);
+	line(55,55,55,850);
+	line(55,850,855,850);
+	line(855,850,855,55);
+	noStroke();
+}
