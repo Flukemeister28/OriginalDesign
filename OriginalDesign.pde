@@ -111,7 +111,7 @@ void topAndBottom()
 {
 	fill(255);
 	rect (27,25,856,30);
-	rect (27,850,856,30);
+	rect (27,850,856,33);
 }
 
 void leftAndRight()
